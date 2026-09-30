@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>khalid.com</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Title -->
+      <h1>CRUDS</h1>
+
+      <!-- Navigation -->
+      <div class="nav">
+        <span>CREATE</span>
+        <span>READ</span>
+        <span>UPDATE</span>
+        <span>DELETE</span>
+        <span>SEARCH</span>
+      </div>
+
+      <!-- Product title -->
+      <input type="text" id="title" placeholder="title" />
+
+      <!-- Price / Taxes / Ads / Discount / Total -->
+      <div class="price-row">
+        <input
+          type="number"
+          id="price"
+          placeholder="price"
+          onkeyup="getTotal()"
+        />
+
+        <input
+          type="number"
+          id="taxes"
+          placeholder="taxes"
+          onkeyup="getTotal()"
+        />
+
+        <input type="number" id="ads" placeholder="ads" onkeyup="getTotal()" />
+
+        <input
+          type="number"
+          id="discount"
+          placeholder="discount"
+          onkeyup="getTotal()"
+        />
+
+        <span class="total">Total:</span>
+      </div>
+
+      <!-- Count -->
+      <input type="number" id="count" placeholder="count" />
+
+      <!-- Category -->
+      <input type="text" id="category" placeholder="category" />
+
+      <!-- Create button -->
+      <button class="btn create-btn" id="btn" onclick="addProduct()">Create</button>
+
+      <!-- Search input -->
+      <input type="text" id="search" placeholder="search" onkeyup="SearchData(this.value)" />
+
+      <!-- Search buttons -->
+      <div class="search-buttons">
+        <button class="btn" id="SearchByTitle" onclick="getSearchMood(this.id)">Search By Title</button>
+
+        <button class="btn" id="SearchByCategory" onclick="getSearchMood(this.id)">Search By Category</button>
+      </div>
+
+      <!-- Delete all -->
+      <button class="btn delete-btn" onclick="deleteAll()">Delete All</button>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>TITLE</th>
+              <th>PRICE</th>
+              <th>TAXES</th>
+              <th>ADS</th>
+              <th>DISCOUNT</th>
+              <th>TOTAL</th>
+              <th>CATEGORY</th>
+              <th>UPDATE</th>
+              <th>DELETE</th>
+            </tr>
+          </thead>
+
+          <tbody id="tbody">
+           
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
